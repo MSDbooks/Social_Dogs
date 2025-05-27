@@ -22,7 +22,6 @@ const useForm = (type) =>{
     }
 
     function validate(value){
-        console.log('chamou validate')
         if(type === false) return true;
         if(value.length === 0){
              setError('Preencha um valor');
@@ -36,7 +35,6 @@ const useForm = (type) =>{
 
         }
     }
-     console.log('opa ' , error)
     
     return {
         value, 
