@@ -11,11 +11,6 @@ const Input = ({
     error,
     validate,
     onBlur}) =>{
-    
-    useEffect(()=>{
-        console.log('valor: ', error)
-    })
-
 
     return(
         

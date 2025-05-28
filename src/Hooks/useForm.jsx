@@ -18,6 +18,7 @@ const useForm = (type) =>{
     })
 
     function onChange({target}){
+       if(error) validate(target.value)
         setValue(target.value)
     }
 
@@ -41,7 +42,7 @@ const useForm = (type) =>{
         setValue,
         onChange,
         error,
-        validate: ()=> validate('email'),
+        validate: ()=> validate(type),
         onBlur: ()=> validate(value)
     }
 }  
