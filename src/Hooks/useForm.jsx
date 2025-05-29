@@ -13,26 +13,9 @@ const useForm = (type) =>{
     const [value, setValue] = React.useState('');
     const [error, setError] = React.useState(null);
 
-    useEffect(()=>{
-      //  console.log('valor entrada: ', type)
-    })
-
     function onChange({target}){
        if(error) validate(target.value)
         setValue(target.value)
-    }
-
-    function validadeEmail(email){
-        if(!email){
-            setError('Preencha um valor');
-            return false;
-        }else if(types[type] && !types.email.regex.test(value)){
-                setError(types[type].message);
-                return false;
-        }else{
-            setError(null);
-            return true;
-        }
     }
 
     function validate(value){
