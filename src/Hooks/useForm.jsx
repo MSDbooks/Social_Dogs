@@ -22,18 +22,31 @@ const useForm = (type) =>{
         setValue(target.value)
     }
 
-    function validate(value){
-        if(type === false) return true;
-        if(value.length === 0){
-             setError('Preencha um valor');
-             return false;
-        }else if (types[type] && !types[type].regex.test(value)){
-            setError(types[type].message);
+    function validadeEmail(email){
+        if(!email){
+            setError('Preencha um valor');
             return false;
+        }else if(types[type] && !types.email.regex.test(value)){
+                setError(types[type].message);
+                return false;
         }else{
             setError(null);
             return true;
+        }
+    }
 
+    function validate(value){
+        if(!value){
+                setError('Preencha um valor');
+            return false;            
+        }else if(types[type] && !types[type].regex.test(value)){
+
+            setError(types[type].message);
+            return false;
+        }else 
+        {
+            setError(null);
+            return true;
         }
     }
     

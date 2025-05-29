@@ -1,25 +1,21 @@
 import React, { useEffect } from "react";
-import { Form, Link } from "react-router-dom";
-import { TOKEN_POST, USER_GET } from "../../api/api";
+import { Link } from "react-router-dom";
 import useForm from "../../Hooks/useForm";
 import Button from "../Form/Button";
 import Input from "../Form/Input";
-//import { UserContext } from "../../UserContext"; 
-'use client';
-import { UserContext } from "../context/UserContext";
+import {UserContext} from '../../UserContext';
 
 const LoginForm = () => {
     const username = useForm('email');
     const password = useForm();
-    const context = React.useContext(UserContext);
-    console.log(context)
-
+    const {userLogin} = React.useContext(UserContext);
+    
    
     async function handleSubmit(event){
         event.preventDefault();
 
        //if(username.validate() && password.validate()){
-        context.userLogin(username.value, password.value)        
+        userLogin(username.value, password.value)        
            
      //   }
     }
