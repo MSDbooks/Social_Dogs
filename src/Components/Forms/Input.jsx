@@ -14,7 +14,7 @@ const Input = ({
 
     return(
         
-        <div className={styles.container}>
+        <div style={{width: '100%'}} className={styles.container}>
             <label htmlFor={name}>{label}</label>
             <input 
                 id={name} 
