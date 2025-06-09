@@ -6,4 +6,6 @@ export const Error = ({error}) => {
   return (
     <p style={{color: '#f31', margin: '1ream 0'}}>{error}</p>
   )
-}
+};
+
+export default Error;
